@@ -1,0 +1,56 @@
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/signin.css' %}">
+</head>
+<body>
+    <div class="container">
+        <img src="{% static '/images/kaizntree_logo.jpg' %}" alt="Kaizntree Logo" class="logo">
+        <h1 class="logo-text">Kaizntree</h1>
+    </div>
+
+    {% include '_partials/messages.html'%}
+    
+    <div class="form-container">
+        <form action="/signup" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <input type="text" class="form-control" id="fname", name="fname", placeholder="First Name" required>
+            </div> 
+
+            <div class="mb-3">
+                <input type="text" class="form-control" id="lname", name="lname", placeholder="Last Name" required>
+            </div>
+
+            <div class="mb-3">
+                <input type="email" class="form-control" id="email", name="email", placeholder="email@example.com" required>
+            </div> 
+
+            <div class="mb-3">
+                <input type="text" class="form-control" id="username", name="username", placeholder="Username" required>
+            </div> 
+
+            <div class="mb-3">
+                <input type="password" class="form-control" id="pass1", name="pass1", placeholder="Password" required>
+            </div> 
+
+            <div class="mb-3">
+                <input type="password" class="form-control" id="pass2", name="pass2", placeholder="Confirm password" required>
+            </div> 
+
+            <div class="button-container">
+                <button type="submit" class="btn btn-light"><a href="/signin">LOG IN</a></button>
+                <button type="submit" class="btn btn-light">CREATE ACCOUNT</button>                
+            </div>
+        </form>
+    </div>    
+</body>
+</html>

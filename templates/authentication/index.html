@@ -1,0 +1,47 @@
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaizntree</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/signin.css' %}">
+</head>
+<body>
+
+    <div class="container">
+        <img src="{% static '/images/kaizntree_logo.jpg' %}" alt="Kaizntree Logo" class="logo">
+        <h1 class="logo-text">Kaizntree</h1>
+    </div>
+
+    {% include '_partials/messages.html'%}
+
+    {% if user.is_authenticated %}
+    <h3>Hello {{ fname }}</h3>
+    <h4>You have successfully logged in.</h4>
+    <button type="submit"><a href="/signout"> Signout </a></button>
+
+    {% else %}
+    <div class="form-container">
+        <form action="/signin" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <input type="text" class="form-control" id="username", name="username", placeholder="Username" required>                    
+            </div>            
+            <div class="mb-3">
+                <input type="password" class="form-control" id="pass1", name="pass1", placeholder="Password" required>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="btn btn-light"><a href="/signup">CREATE ACCOUNT</a></button>
+                <button type="submit" class="btn btn-light">LOG IN</button>
+            </div>
+            <p><a href="{% url 'password_reset' %}">Forgot Passowrd</a></p>
+        </form>
+    </div>
+    {% endif %}
+</body>
+</html>

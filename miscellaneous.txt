@@ -1,0 +1,25 @@
+django superuser - 
+username - admin
+email - admin@admin.com
+pass - admin
+
+Postgres - admin
+
+
+Postman - 
+http://127.0.0.1:8000/api/token/ -> to login with a username and pass
+The above generates a refresh token and access token
+
+http://127.0.0.1:8000/user/ doing this and authorizing the token obtained above will provide that user details
+
+
+
+abcd
+qwerty
+
+yashbitla
+qwerty
+
+activate venv - Scripts\activate.bat
+
+python manage.py runserver

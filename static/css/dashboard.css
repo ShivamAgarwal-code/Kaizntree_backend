@@ -1,0 +1,255 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+#container {
+  display: flex;
+  height: 100%;
+}
+
+#container h3{
+    margin-top: 20px;
+    font-weight: bold;    
+}
+
+#container h4{
+    font-weight: bold;    
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+
+#sidebar {
+  width: 200px;
+  background: #333;
+  color: white;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#sidebar-bottom {
+    margin-top: 10px;
+    
+}
+
+#main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+#header {
+  /* background: #eee; */
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.menu-item {
+    padding: 10px;
+    cursor: pointer;
+
+    display: block; /* Make the <a> tags behave like block elements */
+    padding: 10px;
+    color: white; /* Text color */
+    text-decoration: none; /* Removes underline from links */
+    background-color: #333; /* Background color */
+    margin-bottom: 2px; /* Spacing between buttons */
+    text-align: left; /* Align text to the left */
+
+    display: flex;
+    align-items: center;
+}
+
+.menu-item:hover {
+    background-color: #ffffff; /* Slightly lighter background on hover */
+    color: black;
+}
+
+.menu-item.active {
+  background: #555;
+}
+
+#dashboard-header {
+    display: flex; /* Align children inline */
+    justify-content: start; /* Align children to the start */
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Space between items */
+    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.item-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.item-list th,
+.item-list td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.item-list tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.stock-indicator {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.in-stock {
+  background-color: #4caf50;
+}
+
+.out-of-stock {
+  background-color: #f44336;
+}
+
+
+.icon {
+    margin-right: 8px; /* Adjust the spacing between the icon and the text */
+}
+
+/* You might want to adjust the size of the icons */
+.fa {
+    font-size: 1em; /* Change the size as needed */
+}
+
+#new-item-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Or any color you prefer */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    padding: 10px 20px;
+    background-color: #f9f9f9; /* Or any color you prefer */
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 5px;
+    flex: 1; /* Take up only necessary space */
+    justify-content: flex-end; /* Aligns the search bar to the right */
+    
+}
+
+#search-input {
+    width: auto; /* Adjust the width as needed, or use a specific value like 200px */
+    flex-grow: 0; /* Prevent it from growing too large */
+    margin: 0; /* Adjust margin as needed */
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+#search-bar input {
+    border: none;
+    outline: none;
+}
+
+#search-bar button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.fa-search {
+    color: #333;
+}
+
+.red .circle {
+    background-color: red;
+}
+
+.orange .circle {
+    background-color: orange;
+}
+
+.green .circle {
+    background-color: green;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+body {
+    overflow: hidden; /* Prevent scrolling when the popup is open */
+}
+
+#blur-container {
+    filter: blur(5px); /* Add a blur effect to the background */
+    transition: filter 0.3s ease; /* Smooth transition for the blur effect */
+}
+
+/* Style for the popup container */
+#popup-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    z-index: 1000;
+}
+
+/* Close button style */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
